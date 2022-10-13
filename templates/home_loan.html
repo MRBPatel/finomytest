@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block mainblock %}
+    <div style="margin: 15px; color: #7a6000">
+        <h1 style="color: #7a6000;">We are happy to get you Home Loan!</h1>
+    </div>
+
+
+<div class="col-md-4 col-md-offset-4" style="padding: 20px;">
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
